@@ -130,6 +130,8 @@ A instrução de estilo vai antes do texto: `Diga <estilo>: <texto>`. Marcaçõe
 - O **prompt visual fixo da personagem** abre todo prompt e não pode ser reescrito. Leia o e-mail do LOTE-005 (thread `1a1b3e66eb64ec72`) para copiar o texto exato.
 - O agente responde com um "Relatório de Execução". As respostas demoraram cerca de 40 minutos.
 - Não sobrescreve arquivos existentes. Use `v5`, `v6` etc. para versões novas.
+- **Regra fixa (07/11/2026, definida pelo usuário):** sempre que o conteúdo precisar de imagem, o pedido vai por e-mail ao agente 01. Nunca gerar imagem por ImagineArt, Pollinations direto ou outro serviço.
+- Histórico de lotes: LOTE-002 a 005 = Dia 1 (v1 a v4). **LOTE-006 = Dia 2** (enviado em 07/11/2026, thread `1a1b65c39db4f648`, 18 itens: `2026-11-08_reel_q1..q8_v1`, `2026-11-08_story_q1..q8_v1`, `2026-11-08_carrossel1_q1_v1`, `2026-11-08_carrossel1_q2_v1`). Texto do pedido em `producao/dia-02/PEDIDO-LOTE-006.txt`.
 
 **Os 8 agentes (plano para amanhã).** O usuário quer usar os agentes para gerar áudios e vídeo. Preciso da lista com endereço e função de cada um.
 
