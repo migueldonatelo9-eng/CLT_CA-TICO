@@ -103,6 +103,16 @@ L8 = [
 ]
 
 
+# ------------------------------------------------------------------ LOTE-009: reposição (itens que não saíram e uma nova versão)
+L9 = [
+    (f"{D}_reel_q5_v1", "9:16", "She sits at a small desk in front of a completely blank open notebook with a pen in her hand, a tense forced smile with clenched teeth and one eyebrow twitching. The notebook pages are completely blank.", "yellow", MED),
+    (f"{D}_reel_q14_v2", "9:16", "Her face is lit by the pale glow of an unseen screen, a glassy tired stare with her eyes clearly visible behind clear transparent glasses lenses, slack jaw.", "magenta", CLO),
+    (f"{D}_meme_q3_v1", "4:5", "She sits on the sofa holding a smartphone whose screen is completely blank and softly glowing, lighting her tired wide eyes, the yellow blanket over her legs.", "deep navy blue", MED),
+    ("banco_ela_e08_v1", "9:16", "She is completely drained, her head resting on a table next to a closed blank laptop, eyes half shut and lifeless.", "magenta", BG),
+    ("banco_ela_e11_v1", "9:16", "She gives a suspicious side-eye, face turned slightly away but eyes looking sharply at the viewer, one eyebrow raised.", "yellow", BG),
+]
+
+
 def montar(lote, obs, itens, saida):
     partes = [HEADER.format(lote=lote, obs=obs)]
     for i, (id_, ratio, scene, cor, frame) in enumerate(itens, 1):
@@ -117,3 +127,4 @@ if __name__ == "__main__":
     base.mkdir(exist_ok=True)
     montar("LOTE-007", "lote complementar do Dia 2 (08/11/2026): segundos enquadramentos do reel, mais expressões para os stories, imagem própria para cada slide do carrossel e o meme de vitrine. Não substitui o LOTE-006 nem nenhum lote anterior.", L7, base / "PEDIDO-LOTE-007.txt")
     montar("LOTE-008", "banco de expressões da personagem para reaproveitar em qualquer dia. Não substitui nenhum lote anterior.", L8, base / "PEDIDO-LOTE-008.txt")
+    montar("LOTE-009", "lote de reposição do Dia 2 (08/11/2026): quatro imagens que não foram geradas nos lotes 006, 007 e 008 (reel_q5_v1, meme_q3_v1, banco_ela_e08_v1 e banco_ela_e11_v1) e uma nova versão (reel_q14_v2), porque as lentes dos óculos saíram brancas e escondem os olhos. Não substitui nenhum lote anterior e não mexe nos arquivos que já existem.", L9, base / "PEDIDO-LOTE-009.txt")

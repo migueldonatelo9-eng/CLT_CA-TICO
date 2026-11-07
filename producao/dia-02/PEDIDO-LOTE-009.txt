@@ -1,0 +1,74 @@
+lote: LOTE-009
+projeto: CLT Caótica
+observacao: lote de reposição do Dia 2 (08/11/2026): quatro imagens que não foram geradas nos lotes 006, 007 e 008 (reel_q5_v1, meme_q3_v1, banco_ela_e08_v1 e banco_ela_e11_v1) e uma nova versão (reel_q14_v2), porque as lentes dos óculos saíram brancas e escondem os olhos. Não substitui nenhum lote anterior e não mexe nos arquivos que já existem.
+servico: Pollinations
+modelo: tongyi-mai/z-image-turbo
+formato: PNG real, no tamanho exato indicado em cada item. Não gravar JPEG ou WebP com extensão .png.
+tamanho: passar a largura e a altura do item na chamada. Se o modelo devolver um tamanho maior (múltiplo de 16, por exemplo 1088x1920), cortar no centro até o tamanho exato do item. Nunca esticar a imagem. Se devolver um tamanho menor, entregar como saiu e informar o tamanho no status.
+nome do arquivo: exatamente o valor do campo "arquivo" de cada item, sem prefixo, sem horário e sem o nome do serviço.
+pasta: 1JwTGv8o34-l1s3N0x3ywew1H2GSJ1ibz
+semente: 4321, a mesma para todos os itens. Passar seed=4321 em todas as chamadas. Não trocar a semente por item.
+referencia: nenhuma. Não usar imagem de referência. A personagem vem só da descrição fixa que abre o prompt e da semente.
+resposta: responder neste mesmo e-mail com uma linha de status por id (concluido ou erro), com o tamanho final em pixels e o modelo usado. Gravar cada imagem na pasta indicada. Se o arquivo já existir, responder [CLT-ERRO] com o motivo "arquivo já existe" para esse id e seguir com os demais.
+
+Regras: uma imagem por id. Usar o prompt exatamente como está, sem acrescentar nem tirar nada. A primeira parte do prompt (a descrição da personagem) é igual em todos os itens com personagem e não pode ser reescrita. Não sobrescrever arquivos existentes. Reel, story e banco de expressões: 9:16, 1080x1920. Carrossel e meme: 4:5, 1080x1350.
+
+--- 001 ---
+id: 2026-11-08_reel_q5_v1
+arquivo: 2026-11-08_reel_q5_v1.png
+proporcao: 9:16
+largura: 1080
+altura: 1920
+semente: 4321
+prompt:
+Pop art modern comic book illustration style, an expressive, intellectual young woman. Fair skin, oval face, large expressive brown eyes, defined eyebrows, long eyelashes. Large round black-rimmed glasses. Voluminous dark brown hair in a high messy bun, loose strands framing her face. Small nose, pink lips. Magenta pink shirt, yellow patterned scarf tied around the neck. Strong bold black outlines, subtle hatch shading, vibrant flat colors, halftone comic print texture, grainy finish.
+Scene: She sits at a small desk in front of a completely blank open notebook with a pen in her hand, a tense forced smile with clenched teeth and one eyebrow twitching. The notebook pages are completely blank. Medium shot at eye level, from the waist up. She fills the lower two thirds of the frame. The top third is an empty, flat yellow area with nothing in it.
+Full-bleed illustration that fills the entire canvas, with no frame, no border and no white margin. High contrast, clean editorial art poster aesthetic, no photorealism, no 3D. The image contains no text of any kind: screens, papers, mugs and walls are completely blank. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+--- 002 ---
+id: 2026-11-08_reel_q14_v2
+arquivo: 2026-11-08_reel_q14_v2.png
+proporcao: 9:16
+largura: 1080
+altura: 1920
+semente: 4321
+prompt:
+Pop art modern comic book illustration style, an expressive, intellectual young woman. Fair skin, oval face, large expressive brown eyes, defined eyebrows, long eyelashes. Large round black-rimmed glasses. Voluminous dark brown hair in a high messy bun, loose strands framing her face. Small nose, pink lips. Magenta pink shirt, yellow patterned scarf tied around the neck. Strong bold black outlines, subtle hatch shading, vibrant flat colors, halftone comic print texture, grainy finish.
+Scene: Her face is lit by the pale glow of an unseen screen, a glassy tired stare with her eyes clearly visible behind clear transparent glasses lenses, slack jaw. Extreme close-up of her face and shoulders, at eye level. Her face fills the lower two thirds of the frame. The top third is an empty, flat magenta area with nothing in it.
+Full-bleed illustration that fills the entire canvas, with no frame, no border and no white margin. High contrast, clean editorial art poster aesthetic, no photorealism, no 3D. The image contains no text of any kind: screens, papers, mugs and walls are completely blank. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+--- 003 ---
+id: 2026-11-08_meme_q3_v1
+arquivo: 2026-11-08_meme_q3_v1.png
+proporcao: 4:5
+largura: 1080
+altura: 1350
+semente: 4321
+prompt:
+Pop art modern comic book illustration style, an expressive, intellectual young woman. Fair skin, oval face, large expressive brown eyes, defined eyebrows, long eyelashes. Large round black-rimmed glasses. Voluminous dark brown hair in a high messy bun, loose strands framing her face. Small nose, pink lips. Magenta pink shirt, yellow patterned scarf tied around the neck. Strong bold black outlines, subtle hatch shading, vibrant flat colors, halftone comic print texture, grainy finish.
+Scene: She sits on the sofa holding a smartphone whose screen is completely blank and softly glowing, lighting her tired wide eyes, the yellow blanket over her legs. Medium shot at eye level, from the waist up. She fills the lower two thirds of the frame. The top third is an empty, flat deep navy blue area with nothing in it.
+Full-bleed illustration that fills the entire canvas, with no frame, no border and no white margin. High contrast, clean editorial art poster aesthetic, no photorealism, no 3D. The image contains no text of any kind: screens, papers, mugs and walls are completely blank. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+--- 004 ---
+id: banco_ela_e08_v1
+arquivo: banco_ela_e08_v1.png
+proporcao: 9:16
+largura: 1080
+altura: 1920
+semente: 4321
+prompt:
+Pop art modern comic book illustration style, an expressive, intellectual young woman. Fair skin, oval face, large expressive brown eyes, defined eyebrows, long eyelashes. Large round black-rimmed glasses. Voluminous dark brown hair in a high messy bun, loose strands framing her face. Small nose, pink lips. Magenta pink shirt, yellow patterned scarf tied around the neck. Strong bold black outlines, subtle hatch shading, vibrant flat colors, halftone comic print texture, grainy finish.
+Scene: She is completely drained, her head resting on a table next to a closed blank laptop, eyes half shut and lifeless. Medium close-up at eye level, plain shirt and scarf, no blanket. She fills the lower two thirds of the frame. The top third is an empty, flat magenta area with nothing in it.
+Full-bleed illustration that fills the entire canvas, with no frame, no border and no white margin. High contrast, clean editorial art poster aesthetic, no photorealism, no 3D. The image contains no text of any kind: screens, papers, mugs and walls are completely blank. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+--- 005 ---
+id: banco_ela_e11_v1
+arquivo: banco_ela_e11_v1.png
+proporcao: 9:16
+largura: 1080
+altura: 1920
+semente: 4321
+prompt:
+Pop art modern comic book illustration style, an expressive, intellectual young woman. Fair skin, oval face, large expressive brown eyes, defined eyebrows, long eyelashes. Large round black-rimmed glasses. Voluminous dark brown hair in a high messy bun, loose strands framing her face. Small nose, pink lips. Magenta pink shirt, yellow patterned scarf tied around the neck. Strong bold black outlines, subtle hatch shading, vibrant flat colors, halftone comic print texture, grainy finish.
+Scene: She gives a suspicious side-eye, face turned slightly away but eyes looking sharply at the viewer, one eyebrow raised. Medium close-up at eye level, plain shirt and scarf, no blanket. She fills the lower two thirds of the frame. The top third is an empty, flat yellow area with nothing in it.
+Full-bleed illustration that fills the entire canvas, with no frame, no border and no white margin. High contrast, clean editorial art poster aesthetic, no photorealism, no 3D. The image contains no text of any kind: screens, papers, mugs and walls are completely blank. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
