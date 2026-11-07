@@ -188,6 +188,7 @@ Para cada dia:
 
 ## 11. Pendências
 
+- **Palavras-chave dos comentários (Semana 1):** documento no Drive em `01-planejamento` (id `1oTISrO6-8u9SP0RmVZcJkTrlKSo8NTX-P_ldR8wdCUI`), fonte em `producao/comentarios/palavras-chave-comentarios.html`. Uma palavra principal por dia (Dia 1 FEEDBACK, 2 MINUTINHOS, 3 CRUSH, 4 FOFOCA, 5 ENSAIO, 6 ESTEIRA, 7 ATRASO), com texto da chamada final, pergunta da legenda, comentário fixado e banco de respostas no tom da ELA. A chamada final de cada vídeo usa a palavra do dia.
 - Aprovação formal da Semana 1 (falas, expressões, legendas, grade de carrosséis e memes).
 - Planilha de licenças de músicas: vazia.
 - Trilha musical: não existe ainda.
