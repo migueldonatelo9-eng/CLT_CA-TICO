@@ -1,7 +1,7 @@
 # Dia 1: "Feedback de cinco minutos" (versão aprovada)
 
 **Resultado:** 59,78 s, 1080x1920, 30 fps, áudio −14 LUFS. Aprovado pelo usuário em 07/11/2026.
-**Arquivos:** Drive, pasta `03-aprovados/dia 01`. Código em `producao/remotion/`. Vozes em `producao/scripts/vozes-dia-01.json`.
+**Arquivos:** o vídeo aprovado (1080p e 720p) e o zip de vozes e efeitos foram entregues no chat em 07/11/2026. O envio ao Drive (`03-aprovados/dia 01`) ficou **pendente**: o conector aceita no máximo 10 MB por vídeo e 3 MB por pedido, então suba manualmente. Código em `producao/remotion/` (também em `clt-dia1-remotion-fonte.zip`, na pasta `02-dias/2026-11-07`). Vozes em `producao/scripts/vozes-dia-01.json`.
 
 ## Copy do post
 

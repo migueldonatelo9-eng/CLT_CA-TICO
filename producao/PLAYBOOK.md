@@ -31,7 +31,7 @@ Método usado no **Dia 1, "Feedback de cinco minutos"** (59,8 s, 9:16). O usuár
    ffmpeg -i final.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -c:a aac -b:a 160k -af "loudnorm=I=-14:TP=-1.5:LRA=7" -movflags +faststart saida-1080p.mp4
    ffmpeg -i saida-1080p.mp4 -vf scale=720:1280 -c:v libx264 -crf 25 -c:a aac -b:a 128k -movflags +faststart saida-720p.mp4
    ```
-10. **Salvar.** Vídeo aprovado em `03-aprovados/dia NN` no Drive. Código e documentos neste repositório.
+10. **Salvar.** Vídeo aprovado em `03-aprovados/dia NN` no Drive, enviado **manualmente** (o conector do Drive só aceita arquivos de até 10 MB e 3 MB por pedido). Documentos e zips pequenos podem ir pelo conector. Código e documentos também neste repositório.
 
 ## 3. Regras criativas
 
@@ -137,6 +137,7 @@ Funciona só no computador onde roda. Daqui, da nuvem, não alcança.
 - **Liberados:** npm, PyPI, API do Gemini, clonagem pública de repositórios do GitHub.
 - **Cota do Gemini TTS:** o plano gratuito devolve 429 por minuto e por dia. Gere as falas uma vez, guarde os WAV e não regere sem necessidade. O script pula falas que já existem.
 - **Render:** Remotion usa o Chromium headless já instalado, com `--browser-executable`. 1793 quadros em 1080x1920 levam cerca de 4 minutos.
+- **Envio ao Drive pelo conector:** limite de 10 MB por arquivo e 3,1 MB por pedido. Vídeos e zips de áudio grandes precisam de upload manual. Só dá para alterar metadados de um arquivo existente; para corrigir o conteúdo, suba outro e mova o antigo para a lixeira.
 - **Arquivos do Drive grandes:** `download_file_content` devolve base64. O resultado grande é salvo em arquivo e decodificado com Python. Não traga isso para o contexto.
 - **Acesso aos repositórios:** `migueldonatelo9-eng/CLT_CA-TICO` é só leitura nas sessões atuais (vazio no GitHub). `pauala899/clt_ca-tico` não é acessível (tem as branches `planejamento-editorial`, `personagem-universo` e `entrega-imagens`).
 
@@ -176,4 +177,5 @@ Para cada dia:
 - Trilha musical: não existe ainda.
 - Listar os 8 agentes (endereço e função) para usar amanhã.
 - Dia 1: stories (6) e carrossel ainda usam as imagens do LOTE-005, sem motion.
+- Subir ao Drive, manualmente, o vídeo aprovado em `03-aprovados/dia 01` e o zip de vozes e efeitos (entregues no chat em 07/11/2026).
 - Enviar este repositório ao GitHub: precisa de acesso de escrita (a conta `migueldonatelo9-eng` ou reconexão).
