@@ -51,6 +51,14 @@ Detalhes e copy em `dia-01/STORIES-E-CARROSSEL.md`.
 - Comece pelos entregáveis menores e que dependem de menos coisas (memes, stories de pergunta), depois o reel e por último os recortes e o carrossel.
 - Cada dia tem uma `FILA.md` em `producao/dia-NN/` com o estado de cada entregável, atualizada a cada entrega.
 
+## 2c. Padrão de entrega e Drive (regra do usuário, 07/11)
+
+- **Vídeo em 720p (720x1280)** é o padrão de entrega: H.264 crf 25, até 2 Mbps, AAC 96 kbps. Reel de 60 s fica com ~12 a 15 MB e stories com 4 a 8 MB. É a cópia que o usuário sobe do PC para `03-aprovados/dia NN`. O mestre em 1080p fica no Remotion e nos zips.
+- **Imagens comprimidas** (JPEG q84 progressivo) **com as mesmas dimensões**: ~300 KB cada em vez de ~2 MB. Deixa a edição mais leve. Vale para carrossel, memes e qualquer imagem que vá ao Drive.
+- **Cópia "drive-lite"** (720p em dois passos, até 3 MB) só para quando a sessão da nuvem sobe pelo conector do Drive, que aceita ~3 MB de arquivo por envio. É cópia de conferência, não o arquivo final.
+- **Envio ao Drive em fila de lotes pequenos:** até 6 arquivos por lote, um lote de cada vez, com a lista em `FILA-DRIVE.md`. Imagens leves primeiro, vídeos depois.
+- Script: `python3 producao/scripts/preparar_entrega.py DIA ORIGEM [SAIDA]` gera `720p-padrao/`, `imagens-leves/`, `drive-lite/` e a fila.
+
 ## 3. Regras criativas
 
 **Persona e tom**
@@ -130,6 +138,18 @@ A instrução de estilo vai antes do texto: `Diga <estilo>: <texto>`. Marcaçõe
 **Ainda não tem:** trilha musical. Os agentes de áudio podem entregar. Registre a faixa na planilha de licenças (01-planejamento) antes de publicar.
 
 ## 7. Agentes e integrações
+
+**Formas de gerar imagem no projeto (e o que cada sessão consegue)**
+
+| Rota | Como funciona | Saída | Quem consegue disparar |
+|---|---|---|---|
+| **A. Agente 01 por e-mail** | e-mail `[CLT-PEDIDO] LOTE-00N` com a descrição fixa da ELA; o agente gera (Pollinations, z-image-turbo, semente 4321, sem referência) e grava na pasta IMAGENS PARA CLAUDE do Drive | JPEG 1072x1920 (9:16) ou 1072x1344 (4:5) com extensão `.png`; a ELA só pela descrição em texto; até 170 por dia; de 15 a 40 min por lote; algumas imagens falham e precisam de novo pedido | qualquer sessão com Gmail, **inclusive a da nuvem** |
+| **B. veoaifree.com (Nano Banana) pelo Chrome** | painel "Fila de Imagens" (artefato) monta os prompts; o Claude **com a extensão Claude no Chrome** (no PC) usa a skill `gerar-imagem-veoaifree`, gera uma imagem por vez e baixa | PNG **quadrado 1024x1024** (o site não tem proporção); ~20 s por imagem; referência `base_ancora_v3` possível mas não testada; arquivos na pasta `test claude imagem` | só o Claude do PC com Chrome conectado. A sessão da nuvem pode mandar o pedido por mensagem à sessão do PC |
+
+- A sessão na nuvem **não gera imagem sozinha**: sem Chrome, `veoaifree.com` bloqueado pela rede, `image.pollinations.ai` devolve 402 e os modelos de imagem do Gemini foram recusados pelo usuário (cota e custo). Ela só dispara a rota A e envia lotes à rota B.
+- Da rota B as imagens são quadradas: converta depois para 9:16 ou 4:5 ancorando o quadrado embaixo e estendendo a cor chapada do fundo para cima (topo vazio para os balões). Conferir o primeiro quadro.
+- Os dois blocos base descrevem a ELA de modo diferente (rota A: pop art, descrição fixa; rota B: o bloco do painel, com sardas e traço "Brazilian comic"). **Não misture as rotas no mesmo dia sem decidir antes**, para a ELA não mudar de cara entre as peças.
+- Lotes pequenos e em fila (ver 2b). Imagens do Dia 3 pela rota B: `producao/dia-03/fila-veoaifree/`.
 
 **Agente 01 (imagens, por e-mail)**
 - Pedido: e-mail com assunto `[CLT-PEDIDO] LOTE-00N` para `migueldonatelo9@gmail.com`. Capacidade: até **170 imagens por dia**.
