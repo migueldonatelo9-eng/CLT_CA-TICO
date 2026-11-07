@@ -1,0 +1,17 @@
+[
+ {"id":"L00","voz":"Kore","estilo":"com entusiasmo exagerado e confiança de quem vai arrasar na academia","texto":"Hoje eu treino pesado.","alvo_s":2.0,"pensamento":false},
+ {"id":"L01","voz":"Kore","estilo":"mais baixa, com eco, honesta e envergonhada, como quem confessa o verdadeiro motivo","texto":"Hoje eu treino pesado para não passar vergonha.","alvo_s":3.2,"pensamento":true},
+ {"id":"L02","voz":"Kore","estilo":"num sussurro, baixinho e emocionada, como quem viu algo incrível","texto":"Ai, meu Deus.","alvo_s":1.4,"pensamento":false},
+ {"id":"L03","voz":"Kore","estilo":"mais baixa, com eco, apaixonada e poética, como narradora de novela","texto":"Ele existe. Ele respira. Ele levanta halter como se fosse poesia.","alvo_s":4.4,"pensamento":true},
+ {"id":"L04","voz":"Kore","estilo":"mais baixa, com eco, sonhadora, como narradora de novela romântica, com pausas curtas","texto":"Casamos na praia. [pausa] Dois filhos. [pausa] Um cachorro chamado Haltere.","alvo_s":5.0,"pensamento":true},
+ {"id":"L05","voz":"Kore","estilo":"em pânico contido, respirando fundo, tentando se acalmar","texto":"Respira. Respira.","alvo_s":1.8,"pensamento":false},
+ {"id":"L06","voz":"Kore","estilo":"mais baixa, com eco, exagerada e dramática, falando rápido como quem resume uma novela inteira","texto":"Já briguei com a sogra, já perdoei e já estou na terceira temporada.","alvo_s":4.6,"pensamento":true},
+ {"id":"L07","voz":"Kore","estilo":"alegre demais, com um sorriso forçado e a voz um pouco aguda, acenando","texto":"Tchau!","alvo_s":1.0,"pensamento":false},
+ {"id":"L08","voz":"Kore","estilo":"mais baixa, com eco, derrotada e triste","texto":"Ele nem sabe que eu existo.","alvo_s":2.4,"pensamento":true},
+ {"id":"L09","voz":"Kore","estilo":"desconfiada, fingindo naturalidade, sem convicção","texto":"Foi só um treino.","alvo_s":1.6,"pensamento":false},
+ {"id":"L10","voz":"Kore","estilo":"mais baixa, com eco, sarcástica e engraçada, como quem dá a notícia","texto":"Mas o cachorro já tem nome, e o casamento já tem lista de convidados.","alvo_s":4.6,"pensamento":true},
+ {"id":"L11","voz":"Kore","estilo":"sem energia nenhuma, arrastada e cansada","texto":"Mais uma série.","alvo_s":1.5,"pensamento":false},
+ {"id":"L12","voz":"Kore","estilo":"mais baixa, com eco, resignada e sincera","texto":"Eu treino para me distrair do que eu sinto.","alvo_s":3.0,"pensamento":true},
+ {"id":"L13","voz":"Kore","estilo":"teatral e meio sem graça, anunciando o resultado do treino com pausas dramáticas","texto":"Treino de hoje: [pausa] coração, braço e trinta minutos de expectativa.","alvo_s":5.0,"pensamento":false},
+ {"id":"L14","voz":"Kore","estilo":"mais baixa, com eco, derrotada e engraçada, quase um sussurro","texto":"Resultado: o único músculo que cresceu foi a ilusão.","alvo_s":3.4,"pensamento":true}
+]

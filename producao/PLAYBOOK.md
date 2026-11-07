@@ -43,6 +43,14 @@ Detalhes e copy em `dia-01/STORIES-E-CARROSSEL.md`.
 - **Zona segura dos stories:** nada abaixo de y = 1650. Sem marca "CLT CAÓTICA" nem barra de progresso (o app já mostra a dele).
 - **Nos stories novos o coque da ELA ocupa o topo da imagem.** Balões e frases ficam sobre o cabelo (y = 255) e a etiqueta fica no peito (y = 1290). Confira sempre pelo mosaico.
 
+## 2b. Execução em fila (regra do usuário, 07/11)
+
+- A unidade de trabalho é o **entregável** (um meme, um story, o reel, um slide). Cada um percorre as etapas sozinho: imagens → conferir → converter → montar e renderizar → conferir → enviar no chat → subir no Drive (`03-aprovados/dia NN/...`). **Mande cada coisa assim que ficar pronta**; não junte o dia inteiro para entregar de uma vez.
+- Pedidos de imagem em lotes pequenos (3 a 8) e um de cada vez. O lote seguinte só sai quando o anterior voltar.
+- Etapas independentes andam em paralelo (por exemplo, vozes enquanto as imagens são geradas). Subagentes só para pedaços independentes, e cada um entrega o seu.
+- Comece pelos entregáveis menores e que dependem de menos coisas (memes, stories de pergunta), depois o reel e por último os recortes e o carrossel.
+- Cada dia tem uma `FILA.md` em `producao/dia-NN/` com o estado de cada entregável, atualizada a cada entrega.
+
 ## 3. Regras criativas
 
 **Persona e tom**

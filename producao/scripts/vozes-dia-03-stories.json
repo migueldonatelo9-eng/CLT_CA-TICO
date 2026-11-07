@@ -1,0 +1,10 @@
+[
+ {"id":"ST3a","voz":"Kore","estilo":"animada e curiosa, como quem puxa assunto na academia","texto":"Você já criou uma família inteira durante uma série de treino?","alvo_s":4.0,"pensamento":false},
+ {"id":"ST3b","voz":"Kore","estilo":"mais baixa, com eco, cúmplice e debochada","texto":"Eu já tenho até o nome do cachorro.","alvo_s":2.6,"pensamento":true},
+ {"id":"ST4a","voz":"Kore","estilo":"animada e provocadora, como quem lança um desafio","texto":"Qual foi a sua maior novela sem o outro saber?","alvo_s":3.2,"pensamento":false},
+ {"id":"ST4b","voz":"Kore","estilo":"mais baixa, com eco, derrotada e engraçada","texto":"A minha já está na terceira temporada.","alvo_s":2.6,"pensamento":true},
+ {"id":"ST5a","voz":"Kore","estilo":"triste e teatral, anunciando uma revelação","texto":"Ele nem sabe que eu existo.","alvo_s":2.4,"pensamento":false},
+ {"id":"ST5b","voz":"Kore","estilo":"exausta e teatral, com uma pausa dramática antes da última palavra","texto":"Mas o cachorro [pausa] já tem nome.","alvo_s":3.5,"pensamento":false},
+ {"id":"ST6a","voz":"Kore","estilo":"animada e mandona, chamando o público para a ação","texto":"Vai lá no reel e comenta a sua maior novela!","alvo_s":3.4,"pensamento":false},
+ {"id":"ST6b","voz":"Kore","estilo":"mais baixa, com eco, competitiva e debochada","texto":"Eu quero ver se alguém superou a minha.","alvo_s":2.8,"pensamento":true}
+]
