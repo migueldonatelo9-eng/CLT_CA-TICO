@@ -132,6 +132,10 @@ A instrução de estilo vai antes do texto: `Diga <estilo>: <texto>`. Marcaçõe
 - Não sobrescreve arquivos existentes. Use `v5`, `v6` etc. para versões novas.
 - **Regra fixa (07/11/2026, definida pelo usuário):** sempre que o conteúdo precisar de imagem, o pedido vai por e-mail ao agente 01. Nunca gerar imagem por ImagineArt, Pollinations direto ou outro serviço.
 - Histórico de lotes: LOTE-002 a 005 = Dia 1 (v1 a v4). **LOTE-006 = Dia 2** (enviado em 07/11/2026, thread `1a1b65c39db4f648`, 18 itens: `2026-11-08_reel_q1..q8_v1`, `2026-11-08_story_q1..q8_v1`, `2026-11-08_carrossel1_q1_v1`, `2026-11-08_carrossel1_q2_v1`). Texto do pedido em `producao/dia-02/PEDIDO-LOTE-006.txt`.
+- **LOTE-007** (thread `1a1b660922d0dc6f`, 24 itens): complemento do Dia 2 com `reel_q9..q16` (segundo enquadramento de cada cena: detalhes e closes), `story_q9..q16` (expressões extras), `carrossel1_q3..q7` (uma imagem própria por slide) e `meme_q1..q3` (4:5, "Domingo à noite, versão real").
+- **LOTE-008** (thread `1a1b660f59b6678c`, 12 itens): banco de expressões da ELA `banco_ela_e01..e12_v1` (riso, choro, raiva, paixão, vergonha, orgulho, confusão, exaustão, sorriso falso, comemoração, olhar desconfiado, sem reação), reaproveitável em qualquer dia.
+- Os pedidos são gerados por `producao/scripts/gerar_pedido.py` (descrição fixa da personagem e fechamento ficam no script; só os itens mudam).
+- **Regra de volume:** uma imagem por cena é pouco. Para cada dia, peça pelo menos dois enquadramentos por cena do reel, uma imagem própria por slide do carrossel, as expressões dos stories e o meme. Meta de 40 a 60 imagens por dia (o agente aguenta 170).
 
 **Os 8 agentes (plano para amanhã).** O usuário quer usar os agentes para gerar áudios e vídeo. Preciso da lista com endereço e função de cada um.
 
