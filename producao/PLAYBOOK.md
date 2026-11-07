@@ -33,6 +33,16 @@ Método usado no **Dia 1, "Feedback de cinco minutos"** (59,8 s, 9:16). O usuár
    ```
 10. **Salvar.** Vídeo aprovado em `03-aprovados/dia NN` no Drive, enviado **manualmente** (o conector do Drive só aceita arquivos de até 10 MB e 3 MB por pedido). Documentos e zips pequenos podem ir pelo conector. Código e documentos também neste repositório.
 
+### Stories e carrossel (feitos em 07/11/2026)
+
+Detalhes e copy em `dia-01/STORIES-E-CARROSSEL.md`.
+
+- **Stories 1 e 2:** recortes do reel (`STORY1` = cenas 1 a 4, `STORY2` = cenas 5 a 8 com as pontas encurtadas para caber em 30 s). Saem da mesma timeline do reel, então qualquer ajuste no reel vale para eles.
+- **Stories 3 a 6:** uma cena de 20 s cada, em `src/stories.ts`. Duas imagens por story, balão da ELA e pensamento com voz, e uma etiqueta ("ENQUETE", "RESPONDE AQUI", "VAI NO REEL") com área livre embaixo para a figurinha do app. Vozes em `scripts/vozes-dia-01-stories.json`.
+- **Carrossel:** composição `Carousel` (1080x1350) em `src/Carousel.tsx`, um still por slide: `npx remotion still Carousel out/slide-2.png --props='{"n":2}'`. Os slides 2 a 5 recortam o quadro do reel em 4:5 (campo `y0`), com balão do chefe e painel de tradução.
+- **Zona segura dos stories:** nada abaixo de y = 1650. Sem marca "CLT CAÓTICA" nem barra de progresso (o app já mostra a dele).
+- **Nos stories novos o coque da ELA ocupa o topo da imagem.** Balões e frases ficam sobre o cabelo (y = 255) e a etiqueta fica no peito (y = 1290). Confira sempre pelo mosaico.
+
 ## 3. Regras criativas
 
 **Persona e tom**
@@ -135,7 +145,7 @@ Funciona só no computador onde roda. Daqui, da nuvem, não alcança.
 
 - **Bloqueados:** huggingface.co (403), `voicestudio.sh`, `voicebox.sh`, `remotion.media`, edge-tts e gTTS (sem DNS). Por isso os efeitos são sintetizados e a voz vem do Gemini.
 - **Liberados:** npm, PyPI, API do Gemini, clonagem pública de repositórios do GitHub.
-- **Cota do Gemini TTS:** o plano gratuito devolve 429 por minuto e por dia. Gere as falas uma vez, guarde os WAV e não regere sem necessidade. O script pula falas que já existem.
+- **Cota do Gemini TTS:** o plano gratuito devolve 429 por minuto e por dia. Quando o `gemini-2.5-flash-preview-tts` bloqueia, o `gemini-3.1-flash-tts-preview` (mesma voz Kore) respondeu 200; o timbre pode ficar levemente diferente. O `gemini-2.5-pro-preview-tts` também deu 429. Gere as falas uma vez, guarde os WAV e não regere sem necessidade. O script pula falas que já existem.
 - **Render:** Remotion usa o Chromium headless já instalado, com `--browser-executable`. 1793 quadros em 1080x1920 levam cerca de 4 minutos.
 - **Envio ao Drive pelo conector:** limite de 10 MB por arquivo e 3,1 MB por pedido. Vídeos e zips de áudio grandes precisam de upload manual. Só dá para alterar metadados de um arquivo existente; para corrigir o conteúdo, suba outro e mova o antigo para a lixeira.
 - **Arquivos do Drive grandes:** `download_file_content` devolve base64. O resultado grande é salvo em arquivo e decodificado com Python. Não traga isso para o contexto.
@@ -176,6 +186,7 @@ Para cada dia:
 - Planilha de licenças de músicas: vazia.
 - Trilha musical: não existe ainda.
 - Listar os 8 agentes (endereço e função) para usar amanhã.
-- Dia 1: stories (6) e carrossel ainda usam as imagens do LOTE-005, sem motion.
+- Dia 1: stories (6) e carrossel prontos e entregues no chat em 07/11/2026. Falta subir ao Drive (`03-aprovados/dia 01`) e salvar em `C:\Users\davi1\Downloads\clt caotica`, que o ambiente em nuvem não alcança.
+- Voz do story 4 (`ST4b`) gerada com outro modelo; regerar quando houver cota se quiser timbre idêntico.
 - Subir ao Drive, manualmente, o vídeo aprovado em `03-aprovados/dia 01` e o zip de vozes e efeitos (entregues no chat em 07/11/2026).
 - Enviar este repositório ao GitHub: precisa de acesso de escrita (a conta `migueldonatelo9-eng` ou reconexão).

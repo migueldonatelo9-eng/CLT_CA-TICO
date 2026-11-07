@@ -2,8 +2,8 @@ import React from "react";
 import {AbsoluteFill, Easing, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
 import {Audio} from "@remotion/media";
 import {loadFont} from "@remotion/fonts";
-import {D, FPS, SCENES, TOTAL_FRAMES, sceneDurFrames, sceneStarts, sec} from "./timeline";
-import type {BalloonItem, BigItem, BurstItem, FlashItem, Item, NarrItem, Scene, SfxItem} from "./timeline";
+import {D, FPS, SCENES, layout, sec} from "./timeline";
+import type {ArrowItem, BalloonItem, BigItem, BurstItem, FlashItem, Item, LabelItem, NarrItem, Scene, SfxItem} from "./timeline";
 
 loadFont({family: "Bangers", url: staticFile("fonts/Bangers.woff2"), weight: "400"});
 loadFont({family: "Comic Neue", url: staticFile("fonts/ComicNeue-Bold.woff2"), weight: "700"});
@@ -202,7 +202,7 @@ const BigView: React.FC<{b: BigItem}> = ({b}) => {
   );
 };
 
-const CtaView: React.FC<{t: number}> = ({t}) => {
+const CtaView: React.FC<{t: number; y?: number}> = ({t, y}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const local = frame - sec(t);
@@ -210,7 +210,7 @@ const CtaView: React.FC<{t: number}> = ({t}) => {
   const sp = spring({frame: local, fps, config: {damping: 9, stiffness: 200}});
   const bounce = Math.sin(local * 0.45) * 14;
   return (
-    <div style={{position: "absolute", left: 60, top: 1290, width: 960, scale: String(interpolate(sp, [0, 1], [0.5, 1])), opacity: interpolate(local, [0, 5], [0, 1], clamp)}}>
+    <div style={{position: "absolute", left: 60, top: y ?? 1290, width: 960, scale: String(interpolate(sp, [0, 1], [0.5, 1])), opacity: interpolate(local, [0, 5], [0, 1], clamp)}}>
       <div style={{background: YEL, border: `8px solid ${INK}`, padding: "22px 30px 18px", textAlign: "center", boxShadow: `14px 14px 0 ${INK}`, rotate: "-1.5deg"}}>
         <div style={{fontFamily: FX, fontSize: 70, lineHeight: 1.05, color: INK, letterSpacing: 2}}>QUAL FOI O SEU FEEDBACK MAIS RÁPIDO?</div>
         <div style={{fontFamily: FX, fontSize: 104, lineHeight: 1.0, color: MAG, WebkitTextStroke: `6px ${INK}`, paintOrder: "stroke fill", letterSpacing: 3}}>COMENTA AQUI!</div>
@@ -223,6 +223,36 @@ const CtaView: React.FC<{t: number}> = ({t}) => {
   );
 };
 
+const LabelView: React.FC<{l: LabelItem}> = ({l}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const local = frame - sec(l.t);
+  if (local < 0) return null;
+  const sp = spring({frame: local, fps, config: {damping: 8, stiffness: 220, mass: 0.6}});
+  const pulse = 1 + Math.sin(local * 0.16) * 0.03;
+  return (
+    <div style={{
+      position: "absolute", left: l.x, top: l.y, width: l.w, background: l.bg, color: l.color, border: `8px solid ${INK}`,
+      padding: "12px 20px 6px", fontFamily: FX, fontSize: l.size, letterSpacing: 3, lineHeight: 1.05, textAlign: "center",
+      boxShadow: `10px 10px 0 ${INK}`, scale: String(interpolate(sp, [0, 1], [0.3, 1]) * pulse), rotate: `${l.rot}deg`,
+      opacity: interpolate(local, [0, 4], [0, 1], clamp),
+    }}>{l.text}</div>
+  );
+};
+
+const ArrowView: React.FC<{a: ArrowItem}> = ({a}) => {
+  const frame = useCurrentFrame();
+  const local = frame - sec(a.t);
+  if (local < 0) return null;
+  const bounce = Math.sin(local * 0.45) * 14 * (a.dir === "down" ? 1 : -1);
+  return (
+    <svg width={150} height={140} viewBox="0 0 160 150" style={{position: "absolute", left: a.x - 75, top: a.y, translate: `0 ${bounce}px`, rotate: a.dir === "up" ? "180deg" : "0deg", opacity: interpolate(local, [0, 5], [0, 1], clamp)}}>
+      <path d="M80 8 V96 M34 62 L80 118 L126 62" fill="none" stroke={INK} strokeWidth={34} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M80 8 V96 M34 62 L80 118 L126 62" fill="none" stroke={MAG} strokeWidth={18} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
+
 const ItemView: React.FC<{item: Item}> = ({item}) => {
   switch (item.k) {
     case "balloon": return <BalloonView b={item} />;
@@ -231,7 +261,9 @@ const ItemView: React.FC<{item: Item}> = ({item}) => {
     case "burst": return <BurstView b={item} />;
     case "narr": return <NarrView n={item} />;
     case "big": return <BigView b={item} />;
-    case "cta": return <CtaView t={item.t} />;
+    case "cta": return <CtaView t={item.t} y={item.y} />;
+    case "label": return <LabelView l={item} />;
+    case "arrow": return <ArrowView a={item} />;
   }
 };
 
@@ -282,46 +314,53 @@ const SceneView: React.FC<{scene: Scene}> = ({scene}) => {
 };
 
 // -------------------------- camada global: marca, progresso, pontilhado, vinheta
-const GlobalOverlay: React.FC = () => {
+const GlobalOverlay: React.FC<{total: number; brand: boolean; progress: boolean}> = ({total, brand, progress}) => {
   const frame = useCurrentFrame();
   return (
     <AbsoluteFill style={{pointerEvents: "none"}}>
       <AbsoluteFill style={{background: "radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,0.32) 100%)"}} />
       <AbsoluteFill style={{opacity: 0.07, mixBlendMode: "multiply", backgroundImage: "radial-gradient(rgba(0,0,0,0.9) 1.4px, transparent 1.8px)", backgroundSize: "11px 11px"}} />
-      <div style={{position: "absolute", left: 56, top: 66, background: INK, color: YEL, fontFamily: FX, fontSize: 38, letterSpacing: 3, padding: "4px 20px 2px", border: `5px solid ${YEL}`, borderRadius: 10, rotate: "-2deg"}}>CLT CAÓTICA</div>
-      <div style={{position: "absolute", left: 0, bottom: 0, height: 12, width: `${(frame / TOTAL_FRAMES) * 100}%`, background: MAG}} />
+      {brand && (
+        <div style={{position: "absolute", left: 56, top: 66, background: INK, color: YEL, fontFamily: FX, fontSize: 38, letterSpacing: 3, padding: "4px 20px 2px", border: `5px solid ${YEL}`, borderRadius: 10, rotate: "-2deg"}}>CLT CAÓTICA</div>
+      )}
+      {progress && <div style={{position: "absolute", left: 0, bottom: 0, height: 12, width: `${(frame / total) * 100}%`, background: MAG}} />}
     </AbsoluteFill>
   );
 };
 
 // ------------------------------------------------------------------ áudio
 type AudioEvt = {src: string; at: number; vol: number};
-const buildAudio = (): AudioEvt[] => {
+const buildAudio = (scenes: Scene[], starts: number[]): AudioEvt[] => {
   const evts: AudioEvt[] = [];
-  SCENES.forEach((s, i) => {
-    const base = sceneStarts[i];
+  scenes.forEach((s, i) => {
+    const base = starts[i];
     s.items.forEach((it) => {
       if (it.k === "balloon" || it.k === "narr") evts.push({src: it.voice, at: base + sec(it.t), vol: 1});
-      if (it.k === "balloon" || it.k === "narr") { if (it.k === "balloon" || it.text) evts.push({src: "sfx_pop", at: base + sec(it.t) - 1, vol: 0.35}); }
+      if ((it.k === "balloon") || (it.k === "narr" && it.text)) evts.push({src: "sfx_pop", at: base + sec(it.t) - 1, vol: 0.35});
     });
     s.sounds.forEach((sn) => evts.push({src: sn.src, at: base + sec(sn.t), vol: sn.vol}));
   });
   return evts;
 };
-const AUDIO = buildAudio();
 
-export const Dia1: React.FC = () => (
-  <AbsoluteFill style={{background: "#000"}}>
-    {SCENES.map((s, i) => (
-      <Sequence key={s.id} name={s.id} from={sceneStarts[i]} durationInFrames={sceneDurFrames[i]} premountFor={FPS}>
-        <SceneView scene={s} />
-      </Sequence>
-    ))}
-    <GlobalOverlay />
-    {AUDIO.map((a, i) => (
-      <Sequence key={i} from={Math.max(0, a.at)} layout="none">
-        <Audio src={staticFile(`audio/${a.src}.wav`)} volume={a.vol} />
-      </Sequence>
-    ))}
-  </AbsoluteFill>
-);
+export const Montage: React.FC<{scenes: Scene[]; brand?: boolean; progress?: boolean}> = ({scenes, brand = true, progress = true}) => {
+  const {durs, starts, total} = layout(scenes);
+  const audio = buildAudio(scenes, starts);
+  return (
+    <AbsoluteFill style={{background: "#000"}}>
+      {scenes.map((s, i) => (
+        <Sequence key={s.id} name={s.id} from={starts[i]} durationInFrames={durs[i]} premountFor={FPS}>
+          <SceneView scene={s} />
+        </Sequence>
+      ))}
+      <GlobalOverlay total={total} brand={brand} progress={progress} />
+      {audio.map((a, i) => (
+        <Sequence key={i} from={Math.max(0, a.at)} layout="none">
+          <Audio src={staticFile(`audio/${a.src}.wav`)} volume={a.vol} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};
+
+export const Dia1: React.FC = () => <Montage scenes={SCENES} />;

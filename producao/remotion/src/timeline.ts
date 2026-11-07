@@ -4,6 +4,7 @@ export const FPS = 30;
 export const D = {
   L00: 3.2, L01: 4.67, L02: 3.18, L03: 5.1, L04: 1.15, L05: 6.02,
   L06: 3.83, L07: 4.47, L08: 5.84, L09: 3.12, L10: 7.01,
+  ST3a: 3.56, ST3b: 2.07, ST4a: 4.01, ST4b: 3.1, ST5a: 2.6, ST5b: 8.02, ST6a: 3.93, ST6b: 2.9,
 } as const;
 export type VoiceId = keyof typeof D;
 
@@ -13,8 +14,10 @@ export type FlashItem = {k: "flash"; t: number; color: string; dur?: number; a?:
 export type BurstItem = {k: "burst"; t: number; x: number; y: number; color?: string};
 export type NarrItem = {k: "narr"; text: string; voice: VoiceId; t: number; x: number; y: number; w: number; size: number};
 export type BigItem = {k: "big"; text: string; t: number; until?: number; y: number; bg: string; color: string; size: number};
-export type CtaItem = {k: "cta"; t: number};
-export type Item = BalloonItem | SfxItem | FlashItem | BurstItem | NarrItem | BigItem | CtaItem;
+export type CtaItem = {k: "cta"; t: number; y?: number};
+export type LabelItem = {k: "label"; text: string; t: number; x: number; y: number; w: number; size: number; bg: string; color: string; rot: number};
+export type ArrowItem = {k: "arrow"; t: number; x: number; y: number; dir: "down" | "up"};
+export type Item = BalloonItem | SfxItem | FlashItem | BurstItem | NarrItem | BigItem | CtaItem | LabelItem | ArrowItem;
 export type Shake = {t: number; dur: number; amp: number};
 export type Snd = {src: string; t: number; vol: number};
 export type Scene = {
@@ -150,3 +153,9 @@ export const sec = (t: number) => Math.round(t * FPS);
 export const sceneDurFrames = SCENES.map((s) => sec(s.dur));
 export const sceneStarts = sceneDurFrames.reduce<number[]>((acc, d, i) => { acc.push(i === 0 ? 0 : acc[i - 1] + sceneDurFrames[i - 1]); return acc; }, []);
 export const TOTAL_FRAMES = sceneDurFrames.reduce((a, b) => a + b, 0);
+
+export const layout = (scenes: Scene[]) => {
+  const durs = scenes.map((s) => sec(s.dur));
+  const starts = durs.reduce<number[]>((acc, d, i) => { acc.push(i === 0 ? 0 : acc[i - 1] + durs[i - 1]); return acc; }, []);
+  return {durs, starts, total: durs.reduce((a, b) => a + b, 0)};
+};

@@ -1,0 +1,10 @@
+[
+ {"id":"ST3a","voz":"Kore","estilo":"curiosa, com uma sobrancelha levantada, em tom de enquete divertida","texto":"Seu chefe já disse: é só um feedback rápido?","alvo_s":3.6,"pensamento":false},
+ {"id":"ST3b","voz":"Kore","estilo":"mais baixa, com eco, irônica","texto":"Eu sei que já disse.","alvo_s":1.8,"pensamento":true},
+ {"id":"ST4a","voz":"Kore","estilo":"animada e provocadora, como quem faz uma pergunta para a plateia","texto":"Qual foi o só um minutinho mais longo da sua vida?","alvo_s":4.0,"pensamento":false},
+ {"id":"ST4b","voz":"Kore","estilo":"mais baixa, com eco, cansada e irônica","texto":"O meu durou até a hora do almoço.","alvo_s":3.0,"pensamento":true},
+ {"id":"ST5a","voz":"Kore","estilo":"teatral, como quem anuncia uma piada","texto":"Feedback rápido, versão real:","alvo_s":2.6,"pensamento":false},
+ {"id":"ST5b","voz":"Kore","estilo":"mais baixa, com eco, sarcástica e dramática, listando com peso","texto":"Cinco minutos de conversa, duas horas de reunião e um ano de paciência.","alvo_s":6.2,"pensamento":true},
+ {"id":"ST6a","voz":"Kore","estilo":"empolgada, como quem convida todo mundo","texto":"Vai lá no reel e comenta o seu feedback mais longo!","alvo_s":4.2,"pensamento":false},
+ {"id":"ST6b","voz":"Kore","estilo":"mais baixa, com eco, competitiva e divertida","texto":"Eu quero ver se alguém supera o meu.","alvo_s":2.8,"pensamento":true}
+]
