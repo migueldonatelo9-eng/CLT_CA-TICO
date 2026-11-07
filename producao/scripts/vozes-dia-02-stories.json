@@ -1,0 +1,10 @@
+[
+ {"id":"ST3a","voz":"Kore","estilo":"animada e curiosa, como quem puxa assunto no sofá","texto":"Você também deita só cinco minutinhos no domingo?","alvo_s":3.8,"pensamento":false},
+ {"id":"ST3b","voz":"Kore","estilo":"mais baixa, com eco, cúmplice e debochada","texto":"Eu sei que sim. O sofá me contou.","alvo_s":2.6,"pensamento":true},
+ {"id":"ST4a","voz":"Kore","estilo":"animada e provocadora, como quem lança um desafio","texto":"Qual foi o seu minutinho mais longo?","alvo_s":3.0,"pensamento":false},
+ {"id":"ST4b","voz":"Kore","estilo":"mais baixa, com eco, derrotada e engraçada","texto":"O meu durou o resto do dia.","alvo_s":2.4,"pensamento":true},
+ {"id":"ST5a","voz":"Kore","estilo":"teatral, anunciando uma revelação","texto":"Domingo à noite, versão real:","alvo_s":2.5,"pensamento":false},
+ {"id":"ST5b","voz":"Kore","estilo":"exausta e teatral, com pausas dramáticas entre as frases","texto":"Cinco minutinhos de sofá. [pausa] Cinco horas de sono. [pausa longa] Uma segunda-feira de arrependimento.","alvo_s":7.5,"pensamento":false},
+ {"id":"ST6a","voz":"Kore","estilo":"animada e mandona, chamando o público para a ação","texto":"Vai lá no reel e comenta o seu minutinho mais longo!","alvo_s":3.8,"pensamento":false},
+ {"id":"ST6b","voz":"Kore","estilo":"mais baixa, com eco, competitiva e debochada","texto":"Eu quero ver se alguém dormiu mais que eu.","alvo_s":2.8,"pensamento":true}
+]

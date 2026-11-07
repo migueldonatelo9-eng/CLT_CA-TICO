@@ -1,0 +1,18 @@
+[
+ {"id":"L00","voz":"Kore","estilo":"com entusiasmo exagerado e a confiança de quem acha que vai ser a pessoa mais produtiva do mundo","texto":"Vou deitar só cinco minutinhos e já organizo a semana.","alvo_s":3.4,"pensamento":false},
+ {"id":"L01","voz":"Kore","estilo":"mais baixa, com eco, convencida e dramática, como a heroína de um filme","texto":"Eu, a mulher mais produtiva do universo.","alvo_s":2.6,"pensamento":true},
+ {"id":"L02","voz":"Kore","estilo":"sonolenta e preguiçosa, arrastando as palavras, quase bocejando","texto":"Cinco minutinhos. [pausa] Só cinco.","alvo_s":2.4,"pensamento":false},
+ {"id":"L03","voz":"Kore","estilo":"mais baixa, com eco, rendida e honesta, como quem confessa um segredo","texto":"O sofá tem mais poder sobre mim do que o chefe.","alvo_s":3.2,"pensamento":true},
+ {"id":"L04","voz":"Kore","estilo":"em choque, voz aguda e assustada, como quem acorda de repente","texto":"Já escureceu?!","alvo_s":1.4,"pensamento":false},
+ {"id":"L05","voz":"Kore","estilo":"dramática, com eco, como a narradora de uma novela, com pausa antes de buraco negro","texto":"Cinco minutinhos viraram cinco horas. [pausa] O sofá é um buraco negro com almofada.","alvo_s":5.0,"pensamento":true},
+ {"id":"L06","voz":"Kore","estilo":"em pânico contido, voz trêmula, falando rápido e baixinho","texto":"É domingo à noite. Eu sei. Não me lembra.","alvo_s":3.0,"pensamento":false},
+ {"id":"L07","voz":"Kore","estilo":"mais baixa, com eco, desolada e poética, como quem sente o cheiro do café requentado","texto":"A segunda-feira está chegando. Eu já sinto o cheiro do café requentado.","alvo_s":4.6,"pensamento":true},
+ {"id":"L08","voz":"Kore","estilo":"falsamente confiante, com sorriso forçado na voz","texto":"Amanhã eu organizo a semana.","alvo_s":2.2,"pensamento":false},
+ {"id":"L09","voz":"Kore","estilo":"mais baixa, com eco, cínica e resignada, com ironia seca","texto":"Amanhã eu começo. Essa frase é a minha assinatura.","alvo_s":3.2,"pensamento":true},
+ {"id":"L10","voz":"Kore","estilo":"vencida e preguiçosa, voz arrastada, já aceitando o destino","texto":"Vou ver só um episódio.","alvo_s":1.9,"pensamento":false},
+ {"id":"L11","voz":"Kore","estilo":"mais baixa, com eco, dramática e engraçada, como quem lava as mãos","texto":"E a vida adulta que se vire sozinha.","alvo_s":2.6,"pensamento":true},
+ {"id":"L12","voz":"Kore","estilo":"desconfiada, tentando convencer a si mesma, sem nenhuma convicção","texto":"Eu preciso dormir cedo.","alvo_s":1.8,"pensamento":false},
+ {"id":"L13","voz":"Kore","estilo":"mais baixa, com eco, sarcástica, como quem solta uma piada seca","texto":"Dormir cedo no domingo é igual economizar: só no planejamento.","alvo_s":4.4,"pensamento":true},
+ {"id":"L14","voz":"Kore","estilo":"exausta e teatral, olhando para a câmera, com pausa dramática depois dos dois pontos","texto":"Domingo é o dia que eu mais trabalho: [pausa] trabalho para não pensar na segunda.","alvo_s":5.2,"pensamento":false},
+ {"id":"L15","voz":"Kore","estilo":"mais baixa, com eco, derrotada, quase um sussurro","texto":"E mesmo assim não funciona.","alvo_s":2.0,"pensamento":true}
+]

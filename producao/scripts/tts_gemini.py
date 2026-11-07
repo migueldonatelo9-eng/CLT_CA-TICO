@@ -11,7 +11,11 @@ Uso (a partir da pasta do projeto Remotion):
 """
 import base64, json, os, sys, time, urllib.request, wave
 
-MODEL = "gemini-2.5-flash-preview-tts"
+# Modelo selecionável: TTS_MODEL=gemini-3.1-flash-tts-preview python3 tts_gemini.py ...
+MODEL = os.environ.get("TTS_MODEL") or "gemini-2.5-flash-preview-tts"
+TENTATIVAS = int(os.environ.get("TTS_TENTATIVAS") or 6)
+ESPERA = float(os.environ.get("TTS_ESPERA") or 40)
+PAUSA = float(os.environ.get("TTS_PAUSA") or 30)  # pausa entre falas
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 
 
@@ -27,7 +31,7 @@ def tts(texto, voz, estilo, saida):
     if os.environ.get("GOOGLE_API_KEY"):
         headers["x-goog-api-key"] = os.environ["GOOGLE_API_KEY"]
     req = urllib.request.Request(URL, data=json.dumps(corpo).encode(), headers=headers)
-    for tentativa in range(6):
+    for tentativa in range(TENTATIVAS):
         try:
             with urllib.request.urlopen(req, timeout=120) as r:
                 d = json.load(r)
@@ -37,7 +41,7 @@ def tts(texto, voz, estilo, saida):
             return True
         except Exception as e:  # 429, 502...
             print(saida, "tentativa", tentativa + 1, "falhou:", e, flush=True)
-            time.sleep(40)
+            time.sleep(ESPERA)
     return False
 
 
@@ -51,4 +55,4 @@ if __name__ == "__main__":
             continue  # não gasta cota de novo
         ok = tts(f["texto"], f["voz"], f["estilo"], saida)
         print(f["id"], "ok" if ok else "FALHOU", flush=True)
-        time.sleep(30)
+        time.sleep(PAUSA)

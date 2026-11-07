@@ -190,7 +190,7 @@ Para cada dia:
 
 ## 11. Pendências
 
-- **Palavras-chave dos comentários (Semana 1):** documento no Drive em `01-planejamento` (id `1oTISrO6-8u9SP0RmVZcJkTrlKSo8NTX-P_ldR8wdCUI`), fonte em `producao/comentarios/palavras-chave-comentarios.html`. Uma palavra principal por dia (Dia 1 FEEDBACK, 2 MINUTINHOS, 3 CRUSH, 4 FOFOCA, 5 ENSAIO, 6 ESTEIRA, 7 ATRASO), com texto da chamada final, pergunta da legenda, comentário fixado e banco de respostas no tom da ELA. A chamada final de cada vídeo usa a palavra do dia.
+- **Palavras-chave dos comentários (Semana 1):** documento no Drive em `01-planejamento` (id `1iUgCPFRmrhnncF2aDxxxmT-fQAudnIUAM3AZeUWuW24`), fonte em `producao/comentarios/palavras-chave-comentarios.html`. Uma palavra principal por dia (Dia 1 FEEDBACK, 2 MINUTINHOS, 3 CRUSH, 4 FOFOCA, 5 ENSAIO, 6 ESTEIRA, 7 ATRASO), com texto da chamada final, legenda e comentário fixado aprovados na Semana 1 e banco de respostas no tom da ELA. A palavra do dia entra só no fim da legenda ("Escreve PALAVRA e conta."); a chamada final no vídeo e o comentário fixado seguem o roteiro aprovado.
 - **SendPulse (anotação para quando ligar):** documento no Drive em `01-planejamento` (id `15xX62TMU27zH8uP8nH4WTHw54jtSvV6dbLwCRsrYZQQ`), fonte em `producao/comentarios/anotacao-sendpulse.html`. Gatilho por post com a palavra do dia (modo "Contém"), nunca para todos os posts. Falta definir o que a DM entrega e conectar a conta profissional. Nada foi ligado.
 - Aprovação formal da Semana 1 (falas, expressões, legendas, grade de carrosséis e memes).
 - Planilha de licenças de músicas: vazia.
