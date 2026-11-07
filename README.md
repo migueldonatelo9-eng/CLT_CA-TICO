@@ -61,3 +61,12 @@ Na raiz do Drive, fora da pasta do projeto, há três scripts do Apps Script edi
 - **Remotion video com imagens e animações** (`session_018cxR7ab5YMz7YS5YjDWNu1`): pesquisa de vozes. Chatterbox recomendado, não testado.
 - **Cloudflare API token e geração de imagens** (`session_018cxR7bzBNr16jvLWMvBGof`): `gerar.py` com Cloudflare Workers AI (FLUX) e Pollinations. O Pollinations gera 9:16 nativo e não exige token.
 - **Google API key environment check** (`session_018cxR7cAXEcABybHnbKnM4W`): script `gerar_cha_camomila.py`, com a API do Google, para rodar no PC Windows.
+
+## Produção de vídeo
+
+O método completo, o código e os roteiros ficam em `producao/`:
+
+- `producao/PLAYBOOK.md`: pipeline, regras criativas, sistema visual, áudio, agentes e checklist.
+- `producao/dia-01/ROTEIRO-FINAL.md`: copy, tempos, vozes e efeitos do Dia 1 (aprovado).
+- `producao/remotion/`: projeto Remotion do vídeo (timeline e componentes).
+- `producao/scripts/`: vozes (Gemini), tratamento de áudio, efeitos sonoros e conferência do rosto.

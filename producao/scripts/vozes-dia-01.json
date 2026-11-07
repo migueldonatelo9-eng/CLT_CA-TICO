@@ -1,0 +1,13 @@
+[
+ {"id":"L00","voz":"Kore","estilo":"com entusiasmo exagerado e otimismo ingênuo, como quem acredita no próprio plano","texto":"Hoje o dia vai ser tranquilo.","alvo_s":3.2,"pensamento":false},
+ {"id":"L01","voz":"Kore","estilo":"mais baixa, com eco, desconfiada e dramática, como um detetive que percebe a armadilha","texto":"Já devia ter desconfiado: o chefe chegou sorrindo.","alvo_s":4.2,"pensamento":true},
+ {"id":"L02","voz":"Charon","estilo":"grave, mandona e casual, como quem diz algo terrível sem se importar","texto":"Tem um minutinho? [pausa] É só um feedback rápido.","alvo_s":3.5,"pensamento":false},
+ {"id":"L03","voz":"Kore","estilo":"incrédula, com eco, como quem entendeu a armadilha","texto":"Feedback rápido é o nome que chefe dá para aula de duas horas.","alvo_s":5.0,"pensamento":true},
+ {"id":"L04","voz":"Kore","estilo":"falsamente tranquila, sorriso forçado na voz, com um fio de desconfiança","texto":"Claro, pode falar.","alvo_s":1.8,"pensamento":false},
+ {"id":"L05","voz":"Kore","estilo":"cansada e irônica, com eco","texto":"Claro é a palavra que eu digo quando estou com fome e sem saída.","alvo_s":5.2,"pensamento":true},
+ {"id":"L06","voz":"Charon","estilo":"grave, com elogio falso e pausa longa antes de 'muito'","texto":"Gostei... [pausa longa] muito do seu trabalho.","alvo_s":4.5,"pensamento":false},
+ {"id":"L07","voz":"Charon","estilo":"grave, seco, quase um sussurro de ameaça","texto":"Só uma coisinha: refaz tudo, e é pra ontem.","alvo_s":3.8,"pensamento":false},
+ {"id":"L08","voz":"Kore","estilo":"sarcástica, dramática, com eco, como uma novela das nove","texto":"Gostei muito. [pausa] Essa frase é sempre o começo de um sofrimento.","alvo_s":5.2,"pensamento":true},
+ {"id":"L09","voz":"Kore","estilo":"narradora de drama de TV, lenta, com suspense","texto":"Duas horas... [pausa longa] depois.","alvo_s":3.0,"pensamento":false},
+ {"id":"L10","voz":"Kore","estilo":"exausta e teatral, com pausas dramáticas entre as frases","texto":"Feedback de cinco minutos. [pausa] Duas horas de reunião. [pausa longa] Um ano de paciência.","alvo_s":7.0,"pensamento":false}
+]

@@ -1,0 +1,179 @@
+# Playbook de produção de vídeo: CLT Caótica
+
+Método usado no **Dia 1, "Feedback de cinco minutos"** (59,8 s, 9:16). O usuário aprovou em 07/11/2026: "ficou muito bom, edição e áudio maravilhoso". Este documento existe para repetir o mesmo resultado nos próximos dias sem reaprender nada.
+
+## 1. Resumo do que foi feito
+
+- 8 cenas, cada uma com uma imagem **sem texto** gerada pelo agente 01 (LOTE-005).
+- 11 falas com Gemini TTS, tratadas (pausas cortadas, eco nos pensamentos, volume nivelado).
+- Efeitos sonoros sintetizados com ffmpeg.
+- Montagem em motion graphics com Remotion: balões vetoriais, texto sincronizado com a fala, onomatopeias, câmera com zoom e tremor, transições, marca e barra de progresso.
+- Saída: MP4 1080x1920, 30 fps, áudio −14 LUFS.
+
+## 2. Pipeline passo a passo
+
+1. **Roteiro e storyboard.** 8 cenas. Copy e tempos em `dia-01/ROTEIRO-FINAL.md`.
+2. **Imagens.** Peça ao **agente 01 por e-mail** (seção 7). Não gere imagens por outro serviço. Depois baixe os arquivos do Drive para `public/frames/` (os arquivos chamados `.png` são JPEG de 1072x1920).
+3. **Vozes.** `scripts/tts_gemini.py vozes-dia-01.json audio_bruto/` e depois `scripts/processar_vozes.py vozes-dia-01.json audio_bruto/ audio_final/`. Copie as durações impressas para `D` em `src/timeline.ts`.
+4. **Efeitos sonoros.** `scripts/sintetizar_sfx.py public/audio/`. Copie também as falas processadas para `public/audio/`.
+5. **Timeline.** Edite `remotion/src/timeline.ts`: durações das falas (`D`), cenas, balões, efeitos, tremores e sons. A composição (`Composition.tsx`) quase não muda de um dia para o outro.
+6. **Conferir antes de renderizar.** Renderize quadros avulsos e olhe-os:
+   ```bash
+   npx remotion still CLT-Dia1 out/teste.png --frame=300 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
+   ```
+7. **Render.** Cerca de 4 minutos com 4 CPUs:
+   ```bash
+   npx remotion render CLT-Dia1 out/final.mp4 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell --crf=21
+   ```
+8. **Conferência do vídeo pronto.** `scripts/mosaico_conferencia.py` com 2 ou 3 tempos por cena. Procure qualquer elemento sobre o rosto.
+9. **Pós.** Normalize e recomprima:
+   ```bash
+   ffmpeg -i final.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -c:a aac -b:a 160k -af "loudnorm=I=-14:TP=-1.5:LRA=7" -movflags +faststart saida-1080p.mp4
+   ffmpeg -i saida-1080p.mp4 -vf scale=720:1280 -c:v libx264 -crf 25 -c:a aac -b:a 128k -movflags +faststart saida-720p.mp4
+   ```
+10. **Salvar.** Vídeo aprovado em `03-aprovados/dia NN` no Drive. Código e documentos neste repositório.
+
+## 3. Regras criativas
+
+**Persona e tom**
+- **ELA** é uma personagem original do projeto. O visual vem da âncora `base_ancora_v3` e do prompt fixo do agente 01.
+- O pensamento é sempre mais honesto e mais exagerado que a fala.
+- Ironia sobre a situação, nunca sobre pessoa real ou grupo. Sem nomes fictícios.
+- O **chefe** só aparece como sombra e voz. O balão dele é preto, com etiqueta "CHEFE".
+- Humor de exagero: a emoção sobe a cada cena e estoura na punchline.
+- Toda peça termina com chamada para comentar.
+
+**Regra do rosto (do usuário, 07/11):** o rosto da ELA é a expressão da personagem e **nunca pode ser coberto**. Balões e frases ficam no terço superior vazio da imagem. Onomatopeias e CTA ficam em ombro, camisa, caneca ou fundo. Transições de listras podem cobrir a tela por 0,4 s. Confira sempre pelo mosaico.
+
+**Imagem sem texto.** Letras, balões e legendas entram só como motion graphics. Nunca peça texto ao gerador de imagens.
+
+**Formatos:** reel de 45 a 60 s (1 por dia), stories de 20 a 30 s (6 por dia), carrossel (5 por semana), meme estático de vitrine (frequência a confirmar).
+
+## 4. Sistema visual
+
+| Item | Valor |
+|---|---|
+| Tela | 1080x1920, 30 fps |
+| Cores | amarelo `#FFE600`, magenta `#FF2D95`, tinta `#111111`, branco, ciano `#00E5FF`, azul-noite `#1B1464` |
+| Fontes | **Bangers** (onomatopeias, frases grandes, marca) e **Comic Neue Bold** (balões). Arquivos em `public/fonts/`, carregados com `@remotion/fonts` |
+| Posição dos balões | `y = 215`, largura 600 a 860 |
+| Marca | etiqueta "CLT CAÓTICA" no canto superior esquerdo e barra magenta de progresso na base |
+| Acabamento | vinheta, pontilhado de impressão (halftone) e sombra deslocada de 12 px nos balões |
+
+**Tipos de balão**
+- **ELA fala:** fundo branco, borda preta, ponta curva.
+- **ELA pensa:** fundo rosa claro, borda rosa tracejada, itálico, ponta com bolinhas.
+- **CHEFE:** fundo preto, borda amarela, texto branco, sombra magenta, etiqueta "CHEFE".
+- **Narração:** caixa amarela, itálico, levemente inclinada.
+
+**Animação do texto.** As palavras aparecem distribuídas ao longo da duração da fala (proporcional ao número de letras). As palavras-chave (`emph`) ganham marca-texto (amarelo ou rosa) e um pulo de escala.
+
+**Câmera.** Zoom com easing de 1,0 a 1,14, deriva lateral de 10 px e tremor com decaimento nos impactos (`shakes`). Cada tremor também dá um pequeno "soco" de zoom.
+
+**Efeitos.** Onomatopeia em estrela de 12 pontas com contorno preto, raios (`burst`) com máscara radial e flash colorido.
+
+**Transições.** Três listras diagonais (tinta, magenta, amarela) cobrem o corte, entrando no início da cena e saindo no fim.
+
+## 5. Estrutura e tempos
+
+Cena a cena em `dia-01/ROTEIRO-FINAL.md`. Total: **59,78 s**. Regra prática: se a soma passar de 60 s, encurte as falas (alvo em `vozes-dia-01.json`) antes de mexer em cortes.
+
+## 6. Áudio
+
+**Vozes (Gemini 2.5 Flash TTS)**
+
+| Personagem | Voz | Uso |
+|---|---|---|
+| ELA, pensamentos e narração | Kore | com eco nos pensamentos |
+| CHEFE | Charon | grave, seca |
+
+A instrução de estilo vai antes do texto: `Diga <estilo>: <texto>`. Marcações como `[pausa]` funcionam, mas alongam a fala e são cortadas no pós.
+
+**Tratamento (`processar_vozes.py`)**
+1. Corta silêncios internos maiores que 0,45 s (mantém 0,22 s).
+2. Acelera com `atempo` até o alvo da fala, no máximo **1,4x**.
+3. Pensamentos: `aecho=0.8:0.5:60|90:0.35|0.2`.
+4. `loudnorm` por fala em −16 LUFS.
+5. No fim, mix completo em **−14 LUFS**, pico −1,5 dB.
+
+**Efeitos sonoros (todos sintetizados, sem direitos)**
+
+| Arquivo | Onde |
+|---|---|
+| `sfx_whoosh` | início de cada cena |
+| `sfx_pop` | cada balão e cada frase grande |
+| `sfx_boom` | impactos TUM! e BUM! |
+| `sfx_buzz` | BZZZ! (caneca vibrando) |
+| `sfx_zip` | realização da ELA (cena 3) |
+| `sfx_tick` / `sfx_tock` | relógio da cena 7 |
+| `sfx_trombone` | "um ano de paciência" |
+| `sfx_ding` | chamada para comentar |
+
+**Ainda não tem:** trilha musical. Os agentes de áudio podem entregar. Registre a faixa na planilha de licenças (01-planejamento) antes de publicar.
+
+## 7. Agentes e integrações
+
+**Agente 01 (imagens, por e-mail)**
+- Pedido: e-mail com assunto `[CLT-PEDIDO] LOTE-00N` para `migueldonatelo9@gmail.com`. Capacidade: até **170 imagens por dia**.
+- Campos do cabeçalho: `lote`, `projeto`, `substitui`, `servico`, `modelo`, `formato` (PNG real), `tamanho`, `nome do arquivo`, `pasta` (`1JwTGv8o34-l1s3N0x3ywew1H2GSJ1ibz`), `semente`, `referencia`, `resposta`. Cada item tem `id`, `arquivo`, `proporcao`, `largura`, `altura`, `semente` e `prompt`.
+- Reel e story: 9:16, 1080x1920. Carrossel: 4:5, 1080x1350.
+- O **prompt visual fixo da personagem** abre todo prompt e não pode ser reescrito. Leia o e-mail do LOTE-005 (thread `1a1b3e66eb64ec72`) para copiar o texto exato.
+- O agente responde com um "Relatório de Execução". As respostas demoraram cerca de 40 minutos.
+- Não sobrescreve arquivos existentes. Use `v5`, `v6` etc. para versões novas.
+
+**Os 8 agentes (plano para amanhã).** O usuário quer usar os agentes para gerar áudios e vídeo. Preciso da lista com endereço e função de cada um.
+
+**Voicebox (voz local no PC do usuário).** App grátis e de código aberto, com clonagem de voz. Instalar no PC e registrar no Claude Code **do PC**:
+```bash
+claude mcp add voicebox --transport http --url http://127.0.0.1:17493/mcp --header "X-Voicebox-Client-Id: claude-code"
+```
+Funciona só no computador onde roda. Daqui, da nuvem, não alcança.
+
+**Chave do Gemini.** O ambiente injeta o cabeçalho `x-goog-api-key` pelo proxy: em Edit do ambiente, adicione um cabeçalho personalizado com nome `x-goog-api-key`, valor a chave, prefixo vazio e site `generativelanguage.googleapis.com`. A chave nova só vale em **sessão nova**. Nunca cole a chave no chat.
+
+## 8. Limites do ambiente na nuvem (o que já se sabe)
+
+- **Bloqueados:** huggingface.co (403), `voicestudio.sh`, `voicebox.sh`, `remotion.media`, edge-tts e gTTS (sem DNS). Por isso os efeitos são sintetizados e a voz vem do Gemini.
+- **Liberados:** npm, PyPI, API do Gemini, clonagem pública de repositórios do GitHub.
+- **Cota do Gemini TTS:** o plano gratuito devolve 429 por minuto e por dia. Gere as falas uma vez, guarde os WAV e não regere sem necessidade. O script pula falas que já existem.
+- **Render:** Remotion usa o Chromium headless já instalado, com `--browser-executable`. 1793 quadros em 1080x1920 levam cerca de 4 minutos.
+- **Arquivos do Drive grandes:** `download_file_content` devolve base64. O resultado grande é salvo em arquivo e decodificado com Python. Não traga isso para o contexto.
+- **Acesso aos repositórios:** `migueldonatelo9-eng/CLT_CA-TICO` é só leitura nas sessões atuais (vazio no GitHub). `pauala899/clt_ca-tico` não é acessível (tem as branches `planejamento-editorial`, `personagem-universo` e `entrega-imagens`).
+
+## 9. Checklist antes de entregar
+
+- [ ] Rosto da ELA livre em todos os quadros do mosaico.
+- [ ] Duração entre 45 e 60 s.
+- [ ] Imagens sem texto, balões só em motion.
+- [ ] Cada palavra aparece junto da fala correspondente.
+- [ ] Áudio em −14 LUFS e pico abaixo de −1 dB.
+- [ ] Texto dentro da área segura (80 px dos lados, 100 px do topo e da base).
+- [ ] Final com chamada para comentar.
+- [ ] Faixa de música (se houver) anotada na planilha de licenças.
+
+## 10. Como fazer os Dias 2 a 7
+
+| Dia | Tema | Local |
+|---|---|---|
+| 2 (dom 08/11) | Só cinco minutinhos no sofá | casa |
+| 3 (seg 09/11) | A novela do crush | academia |
+| 4 (ter 10/11) | A fofoca sou eu | trabalho |
+| 5 (qua 11/11) | Ensaio no espelho | casa |
+| 6 (qui 12/11) | Esteira ocupada | academia |
+| 7 (sex 13/11) | Desculpa de atraso | trabalho |
+
+Para cada dia:
+1. Reduza o roteiro a **8 cenas** com falas curtas (cada uma cabe em 5 s) e 11 a 12 falas no total.
+2. Peça as 8 a 10 imagens ao agente 01 (LOTE novo, ids `v1`), sempre com o prompt fixo da personagem e o terço superior vazio para os balões.
+3. Escreva `vozes-dia-NN.json`, gere e processe as vozes.
+4. Copie `timeline.ts` do Dia 1 e troque textos, tempos e posições.
+5. Siga os passos 6 a 10 da seção 2.
+
+## 11. Pendências
+
+- Aprovação formal da Semana 1 (falas, expressões, legendas, grade de carrosséis e memes).
+- Planilha de licenças de músicas: vazia.
+- Trilha musical: não existe ainda.
+- Listar os 8 agentes (endereço e função) para usar amanhã.
+- Dia 1: stories (6) e carrossel ainda usam as imagens do LOTE-005, sem motion.
+- Enviar este repositório ao GitHub: precisa de acesso de escrita (a conta `migueldonatelo9-eng` ou reconexão).
