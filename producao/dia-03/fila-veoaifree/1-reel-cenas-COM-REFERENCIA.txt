@@ -1,0 +1,82 @@
+Claude, gere estas imagens no veoaifree.com (Nano Banana) com a skill gerar-imagem-veoaifree. Espere cada imagem ficar pronta, baixe e me confirme uma a uma. Pasta de destino: C:\Users\davi1\Downloads\test claude imagem
+Use a imagem de referência base_ancora_v3 em todas.
+
+1) Arquivo: 2026-11-09_reel_q1_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: In a gym, she holds a plain water bottle and raises a fist with a big confident smile and shining eyes; plain dumbbells on a rack behind her.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+2) Arquivo: 2026-11-09_reel_q2_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat magenta, and the top third is empty.
+Scene: She freezes mid-step with one hand over her mouth and wide shining eyes, looking into the distance; far behind her, small and blurred, a tall athletic person lifting a dumbbell, seen only from behind, no face.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+3) Arquivo: 2026-11-09_reel_q3_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat magenta, and the top third is empty.
+Scene: She has a dreamy smile and heart-shaped eyes with hands clasped under her chin; above her head a big plain cloud shape containing a tiny drawing of two silhouettes holding hands on a beach at sunset.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+4) Arquivo: 2026-11-09_reel_q4_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: She hugs a heavy plain dumbbell to her chest like a baby, with panicked wide eyes and sweat drops on her forehead.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+5) Arquivo: 2026-11-09_reel_q5_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: She waves goodbye with a stiff hand and a forced sad smile; far behind her, small and blurred, a tall person wiping sweat walks away looking at a phone, seen from behind, no face.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+6) Arquivo: 2026-11-09_reel_q6_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat magenta, and the top third is empty.
+Scene: She looks sideways with a suspicious squint and one raised eyebrow, arms crossed, a plain dumbbell on the floor next to her.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+7) Arquivo: 2026-11-09_reel_q7_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: She lifts a small plain dumbbell with no energy, drooping shoulders and tired half-closed eyes.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+8) Arquivo: 2026-11-09_reel_q8_v1.png
+Image 1 is the character reference (base_ancora_v3). Keep the same woman: face, body build and silhouette exactly as in Image 1, with the same outfit.
+Vertical 9:16 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat magenta, and the top third is empty.
+Scene: She looks straight at the viewer with one fist half raised and an awkward sheepish half-smile, a light blush on her cheeks.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.

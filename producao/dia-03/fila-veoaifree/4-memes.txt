@@ -1,0 +1,28 @@
+Claude, gere estas imagens no veoaifree.com (Nano Banana) com a skill gerar-imagem-veoaifree. Espere cada imagem ficar pronta, baixe e me confirme uma a uma. Pasta de destino: C:\Users\davi1\Downloads\test claude imagem
+
+1) Arquivo: 2026-11-09_meme_q1_v1.png
+Vertical 4:5 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: She hugs a cute plain small dog with a dreamy sad look, resting her cheek on the dog's head.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+2) Arquivo: 2026-11-09_meme_q2_v1.png
+Vertical 4:5 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat magenta, and the top third is empty.
+Scene: She holds a dog leash with a small dog sitting beside her and looks straight at the viewer with a lovesick, hopeful expression.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
+
+3) Arquivo: 2026-11-09_meme_q3_v1.png
+Vertical 4:5 panel for an Instagram story.
+Style: Brazilian comic and meme style digital illustration, clean bold black ink lines, flat colors, high contrast, a palette of yellow, magenta, black and white.
+Character: a woman with a delicate face, big expressive brown eyes, round black glasses, soft freckles on her nose and cheeks, dark eyebrows, brown hair in a big high voluminous bun with loose strands. She wears a magenta top with a yellow patterned scarf.
+Camera: Medium shot at eye level, from the waist up.
+Composition: She fills the lower two thirds of the frame. The background is flat yellow, and the top third is empty.
+Scene: She sits on a gym bench with a small dog next to her and gazes dreamily into the distance with a soft smile.
+Constraints: The image contains no text of any kind. No text, no letters, no words, no numbers, no speech balloons, no logos, no watermark.
